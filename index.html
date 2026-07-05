@@ -12,25 +12,19 @@
 
     <h1>Craft Beer</h1>
 
-    <div class="content">
+    <label>Amount Wanted</label>
 
-        <label>Amount Wanted</label>
-
-        <div class="amountBox">
-            <button class="amountBtn" onclick="changeAmount(-10)">−</button>
-
-            <div id="amountDisplay">10</div>
-
-            <button class="amountBtn" onclick="changeAmount(10)">+</button>
-        </div>
-
-        <button class="calculateBtn" onclick="calculate()">
-            CALCULATE
-        </button>
-
-        <div id="results"></div>
-
+    <div class="amount-selector">
+        <button onclick="changeAmount(-10)">−</button>
+        <div id="amount">10</div>
+        <button onclick="changeAmount(10)">+</button>
     </div>
+
+    <button class="calculate" onclick="calculate()">
+        CALCULATE
+    </button>
+
+    <div id="results"></div>
 
 </div>
 
