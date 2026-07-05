@@ -1,57 +1,68 @@
 let amount = 10;
 
-function changeAmount(change) {
+function changeAmount(change){
 
     amount += change;
 
-    if (amount < 10)
+    if(amount < 10){
         amount = 10;
+    }
 
-    document.getElementById("amountDisplay").textContent = amount;
+    document.getElementById("amount").innerText = amount;
+
 }
 
-function calculate() {
+function calculate(){
 
-    const batches = amount / 10;
+    let batches = amount / 10;
 
-    const water = batches * 8;
-    const wheat = batches * 5;
-    const sugar = batches * 6;
-    const yeast = batches * 4;
+    let water = batches * 8;
+    let wheat = batches * 5;
+    let sugar = batches * 6;
+    let yeast = batches * 4;
 
     document.getElementById("results").innerHTML = `
-        <div class="header">YOU NEED</div>
 
-        <div class="resultRow">
+        <div class="section">
+            YOU NEED
+        </div>
+
+        <div class="row">
             <span>Water Bottles</span>
-            <b>${water}</b>
+            <strong>${water}</strong>
         </div>
 
-        <div class="resultRow">
+        <div class="row">
             <span>Wheat</span>
-            <b>${wheat}</b>
+            <strong>${wheat}</strong>
         </div>
 
-        <div class="resultRow">
+        <div class="row">
             <span>Sugar</span>
-            <b>${sugar}</b>
+            <strong>${sugar}</strong>
         </div>
 
-        <div class="resultRow">
+        <div class="row">
             <span>Yeast</span>
-            <b>${yeast}</b>
+            <strong>${yeast}</strong>
         </div>
 
-        <div class="header">INFO</div>
+        <div class="section">
+            INFO
+        </div>
 
-        <div class="resultRow">
+        <div class="row">
             <span>Craft Beer Wanted</span>
-            <b>${amount}</b>
+            <strong>${amount}</strong>
         </div>
 
-        <div class="resultRow">
+        <div class="row">
             <span>Batches Needed</span>
-            <b>${batches}</b>
+            <strong>${batches}</strong>
         </div>
+
     `;
+
 }
+
+calculate();
