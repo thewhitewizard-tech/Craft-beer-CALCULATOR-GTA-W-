@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Craft Calculator</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft Beer Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>Craft Beer</h1>
+    <h1>Craft Beer</h1>
 
-<div class="content">
+    <div class="content">
 
-<label>How many Craft Beer?</label>
+        <label>Amount Wanted</label>
 
-<input id="amount" type="number" value="10">
+        <div class="amountBox">
 
-<button onclick="calculate()">
-CALCULATE
-</button>
+            <button class="amountBtn" onclick="changeAmount(-10)">−</button>
 
-<div id="results"></div>
+            <div id="amountDisplay">10</div>
 
-</div>
+            <button class="amountBtn" onclick="changeAmount(10)">+</button>
+
+        </div>
+
+        <div id="results"></div>
+
+    </div>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
