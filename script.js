@@ -1,54 +1,65 @@
-const recipes = {
+let amount = 10;
 
-    wheatMash:{
-        makes:1,
-        ingredients:{
-            "Water Bottles":8,
-            "Wheat":5,
-            "Sugar":6
-        }
-    },
+function changeAmount(change){
 
-    craftBeer:{
-        makes:10,
-        ingredients:{
-            "Wheat Mash":8,
-            "Yeast":4
-        }
-    }
+    amount += change;
 
-};
+    if(amount < 10)
+        amount = 10;
+
+    document.getElementById("amountDisplay").textContent = amount;
+
+    calculate();
+
+}
 
 function calculate(){
 
-    const wanted = parseInt(document.getElementById("amount").value);
+    const batches = amount / 10;
 
-    if(isNaN(wanted) || wanted <= 0){
-        return;
-    }
-
-    const cycles = Math.ceil(wanted / recipes.craftBeer.makes);
-
-    const wheatMash = recipes.craftBeer.ingredients["Wheat Mash"] * cycles;
-    const yeast = recipes.craftBeer.ingredients["Yeast"] * cycles;
-
-    const water = wheatMash * recipes.wheatMash.ingredients["Water Bottles"];
-    const wheat = wheatMash * recipes.wheatMash.ingredients["Wheat"];
-    const sugar = wheatMash * recipes.wheatMash.ingredients["Sugar"];
+    const water = batches * 8;
+    const wheat = batches * 5;
+    const sugar = batches * 6;
+    const yeast = batches * 4;
 
     document.getElementById("results").innerHTML = `
-        <h2>Results</h2>
 
-        Craft Beer Wanted: <b>${wanted}</b><br>
-        Craft Beer Cycles: <b>${cycles}</b><br><br>
+    <div class="header">YOU NEED</div>
 
-        Wheat Mash Needed: <b>${wheatMash}</b><br>
-        Yeast Needed: <b>${yeast}</b><br><br>
+    <div class="resultRow">
+        <span>Water Bottles</span>
+        <b>${water}</b>
+    </div>
 
-        <h3>Base Ingredients</h3>
+    <div class="resultRow">
+        <span>Wheat</span>
+        <b>${wheat}</b>
+    </div>
 
-        Water Bottles: <b>${water}</b><br>
-        Wheat: <b>${wheat}</b><br>
-        Sugar: <b>${sugar}</b>
+    <div class="resultRow">
+        <span>Sugar</span>
+        <b>${sugar}</b>
+    </div>
+
+    <div class="resultRow">
+        <span>Yeast</span>
+        <b>${yeast}</b>
+    </div>
+
+    <div class="header">INFO</div>
+
+    <div class="resultRow">
+        <span>Craft Beer</span>
+        <b>${amount}</b>
+    </div>
+
+    <div class="resultRow">
+        <span>Batches</span>
+        <b>${batches}</b>
+    </div>
+
     `;
+
 }
+
+calculate();
