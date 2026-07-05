@@ -1,51 +1,103 @@
-.amountBox{
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
+body{
+    background:#111;
+    display:flex;
+    justify-content:center;
+    padding:40px;
+    color:white;
+}
+
+.container{
+    width:520px;
+    background:#222;
+    border-left:5px solid orange;
+    padding:25px;
+}
+
+h1{
+    text-align:center;
+    color:orange;
+    font-size:48px;
+    margin-bottom:35px;
+}
+
+label{
+    display:block;
+    color:#bfbfbf;
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.amount-selector{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.amount-selector button{
+    width:80px;
+    height:80px;
+    background:orange;
+    color:black;
+    border:none;
+    font-size:40px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.amount-selector button:hover{
+    background:#ffbf3f;
+}
+
+#amount{
+    flex:1;
+    background:#111;
+    text-align:center;
+    font-size:48px;
+    padding:15px;
+    font-weight:bold;
+}
+
+.calculate{
+    width:100%;
+    padding:18px;
+    font-size:26px;
+    font-weight:bold;
+    background:orange;
+    border:none;
+    cursor:pointer;
+    margin-bottom:30px;
+}
+
+.calculate:hover{
+    background:#ffbf3f;
+}
+
+.section{
+    background:#111;
+    color:orange;
+    padding:10px;
+    margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.row{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-
-    margin:25px 0;
-
-    background:#111;
-
-    padding:15px;
-
+    padding:12px;
+    border-bottom:1px solid #333;
+    font-size:22px;
 }
 
-.amountBtn{
-
-    width:70px;
-    height:70px;
-
-    font-size:36px;
-
-    background:#f0a500;
-    color:black;
-
-    border:none;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-}
-
-.amountBtn:hover{
-
-    background:#ffc74d;
-
-}
-
-#amountDisplay{
-
-    font-size:42px;
-
-    font-weight:bold;
-
-    color:white;
-
-    width:120px;
-
-    text-align:center;
-
+.row:nth-child(even){
+    background:#2d2d2d;
 }
