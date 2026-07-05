@@ -1,19 +1,16 @@
 let amount = 10;
 
-function changeAmount(change){
+function changeAmount(change) {
 
     amount += change;
 
-    if(amount < 10)
+    if (amount < 10)
         amount = 10;
 
     document.getElementById("amountDisplay").textContent = amount;
-
-    calculate();
-
 }
 
-function calculate(){
+function calculate() {
 
     const batches = amount / 10;
 
@@ -23,43 +20,38 @@ function calculate(){
     const yeast = batches * 4;
 
     document.getElementById("results").innerHTML = `
+        <div class="header">YOU NEED</div>
 
-    <div class="header">YOU NEED</div>
+        <div class="resultRow">
+            <span>Water Bottles</span>
+            <b>${water}</b>
+        </div>
 
-    <div class="resultRow">
-        <span>Water Bottles</span>
-        <b>${water}</b>
-    </div>
+        <div class="resultRow">
+            <span>Wheat</span>
+            <b>${wheat}</b>
+        </div>
 
-    <div class="resultRow">
-        <span>Wheat</span>
-        <b>${wheat}</b>
-    </div>
+        <div class="resultRow">
+            <span>Sugar</span>
+            <b>${sugar}</b>
+        </div>
 
-    <div class="resultRow">
-        <span>Sugar</span>
-        <b>${sugar}</b>
-    </div>
+        <div class="resultRow">
+            <span>Yeast</span>
+            <b>${yeast}</b>
+        </div>
 
-    <div class="resultRow">
-        <span>Yeast</span>
-        <b>${yeast}</b>
-    </div>
+        <div class="header">INFO</div>
 
-    <div class="header">INFO</div>
+        <div class="resultRow">
+            <span>Craft Beer Wanted</span>
+            <b>${amount}</b>
+        </div>
 
-    <div class="resultRow">
-        <span>Craft Beer</span>
-        <b>${amount}</b>
-    </div>
-
-    <div class="resultRow">
-        <span>Batches</span>
-        <b>${batches}</b>
-    </div>
-
+        <div class="resultRow">
+            <span>Batches Needed</span>
+            <b>${batches}</b>
+        </div>
     `;
-
 }
-
-calculate();
