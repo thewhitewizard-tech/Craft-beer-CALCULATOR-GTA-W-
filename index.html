@@ -6,7 +6,6 @@
     <title>Craft Beer Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
@@ -18,14 +17,16 @@
         <label>Amount Wanted</label>
 
         <div class="amountBox">
-
             <button class="amountBtn" onclick="changeAmount(-10)">−</button>
 
             <div id="amountDisplay">10</div>
 
             <button class="amountBtn" onclick="changeAmount(10)">+</button>
-
         </div>
+
+        <button class="calculateBtn" onclick="calculate()">
+            CALCULATE
+        </button>
 
         <div id="results"></div>
 
